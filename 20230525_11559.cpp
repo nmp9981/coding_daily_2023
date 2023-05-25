@@ -59,10 +59,10 @@ void Chain(int i,int j,char c) {
 void DownPuyo() {
     for (int j = 0; j < Col; j++) {//각 열별로
         vector<char> newPuyo;
-        for (int i = Row-1; i > 0; i--) {//밑에서부터
+        for (int i = Row-1; i >= 0; i--) {//밑에서부터
             if (world[i][j] != '.') newPuyo.push_back(world[i][j]);
         }
-        for (int i = Row - 1; i > 0; i--) {//밑에서부터
+        for (int i = Row - 1; i >= 0; i--) {//밑에서부터
             if (i >= Row-newPuyo.size()) world[i][j] = newPuyo[Row - 1 - i];
             else world[i][j] = '.';
         }
